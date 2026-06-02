@@ -1,0 +1,39 @@
+# Java
+*.class
+*.log
+
+# Maven
+target/
+
+# Eclipse / STS
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+
+# IntelliJ
+.idea/
+*.iml
+*.iws
+out/
+
+# Tomcat / Server local
+Servers/
+*.war
+*.ear
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local / Secret Config
+.env
+*.env
+config.properties
+db.properties
+application-local.properties
+application-secret.properties
+
+!config.properties.example
+!db.properties.example
