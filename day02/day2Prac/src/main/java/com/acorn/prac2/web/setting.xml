@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Calculator 타입의 객체 생성하기 -->
+
+	<bean id="calculator" class="com.acorn.prac2.spring.ACalculator"></bean>
+
+	<!-- Program 객체 생성 Bean -->
+	<!-- Program 객체 내부로 Calculator type의 주입(조립) Injection -->
+
+
+	<!-- 1. 생성자 주입, 매개변수 있는 생성자가 반드시 존재해야 함 -->
+	<bean id="p" class="com.acorn.prac2.spring.Program">
+		<!-- ref 안에는 위에 9번 line bean id 값이 온다.  -->
+		<constructor-arg ref="calculator"></constructor-arg>
+	</bean>
+
+	<!-- 2. setter 주입  -->
+	<bean id="p2" class="com.acorn.prac2.spring.Program">
+		<!-- setCalculator를 사용하는 것, name = 클래스 속 필드명을 의미 -->
+		<property name="calculator" ref="calculator"></property>
+
+	</bean>
+
+
+
+
+</beans>
